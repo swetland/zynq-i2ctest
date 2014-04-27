@@ -1,0 +1,20 @@
+
+Xilinx Zynq I2C Test
+
+A simple experiment to sort out some techniques for developing with
+Xilinx Vivado (2014.1) against the ZYBO development board.
+
+- builds from commandline
+- uses BSCANE2 JTAG block to provide host interaction
+
+To talk to this, use the "i2c" tool in:
+https://github.com/swetland/jtag-mpsse
+
+To read the MAC address from the I2C EEPROM on ZYBO:
+% i2c sw:a0 w:fa sw:a1 r r r r r r p 
+
+
+Third Party Code Included:
+  I2C Master from OpenCores (minus the wishbone interface)
+  http://opencores.org/project,i2c
+  BSD-style license - see header in rtl/i2c*.v
